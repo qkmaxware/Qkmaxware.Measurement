@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <LangVersion>9</LangVersion>
+
+    <PackageId>Qkmaxware.Measurement</PackageId>
+    <PackageName>Qkmaxware.Measurement</PackageName>
+    <Version>1.0.0</Version>
+    <Authors>Colin Halseth</Authors>
+    <PackageTags>units, measurements</PackageTags>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+    <RepositoryUrl>https://github.com/qkmaxware/Qkmaxware.Measurement.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageDescription>
+      Qkmaxware.Measurement is a library dealing with quantities and measurements.
+    </PackageDescription>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\LICENSE.md" CopyToOutputDirectory="Always" Pack="true" PackagePath="$(PackageLicenseFile)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Qkmaxware.Numbers" Version="1.0.4" />
+  </ItemGroup>
+
+</Project>
