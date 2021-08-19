@@ -6,7 +6,7 @@
 
     <PackageId>Qkmaxware.Measurement</PackageId>
     <PackageName>Qkmaxware.Measurement</PackageName>
-    <Version>1.0.2</Version>
+    <Version>1.0.3</Version>
     <Authors>Colin Halseth</Authors>
     <PackageTags>units, measurements</PackageTags>
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
