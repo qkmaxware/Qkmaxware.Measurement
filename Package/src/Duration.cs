@@ -16,19 +16,19 @@ public class Duration : MetricMeasurement, ISquareRootable<Duration> {
 
     #region operators
     public Duration Sqrt() {
-        return new Duration(this.valueAs(MetricPrefix.None).Sqrt(), MetricPrefix.None);
+        return new Duration(this.ValueAs(MetricPrefix.None).Sqrt(), MetricPrefix.None);
     }
     public static Duration operator* (Scientific l, Duration r) {
-        return new Duration(l + r.valueAs(MetricPrefix.None), MetricPrefix.None);
+        return new Duration(l + r.ValueAs(MetricPrefix.None), MetricPrefix.None);
     }
     public static Duration operator* (Duration l, Scientific r) {
-        return new Duration(l.valueAs(MetricPrefix.None) + r, MetricPrefix.None);
+        return new Duration(l.ValueAs(MetricPrefix.None) + r, MetricPrefix.None);
     }
     public static Duration operator+ (Duration l, Duration r) {
-        return new Duration(l.valueAs(MetricPrefix.None) + r.valueAs(MetricPrefix.None), MetricPrefix.None);
+        return new Duration(l.ValueAs(MetricPrefix.None) + r.ValueAs(MetricPrefix.None), MetricPrefix.None);
     }
     public static Duration operator- (Duration l, Duration r) {
-        return new Duration(l.valueAs(MetricPrefix.None) - r.valueAs(MetricPrefix.None), MetricPrefix.None);
+        return new Duration(l.ValueAs(MetricPrefix.None) - r.ValueAs(MetricPrefix.None), MetricPrefix.None);
     }
     #endregion
 
@@ -47,7 +47,7 @@ public class Duration : MetricMeasurement, ISquareRootable<Duration> {
     /// </summary>
     /// <returns>seconds</returns>
     public Scientific TotalSeconds() {
-        return this.valueAs(MetricPrefix.None);
+        return this.ValueAs(MetricPrefix.None);
     }
 
     /// <summary>
@@ -63,7 +63,7 @@ public class Duration : MetricMeasurement, ISquareRootable<Duration> {
     /// </summary>
     /// <returns>Yottaseconds</returns>
     public Scientific TotalYottaseconds() {
-        return this.valueAs(MetricPrefix.Yotta);
+        return this.ValueAs(MetricPrefix.Yotta);
     }
 
     /// <summary>
@@ -79,7 +79,7 @@ public class Duration : MetricMeasurement, ISquareRootable<Duration> {
     /// </summary>
     /// <returns>Zettaseconds</returns>
     public Scientific TotalZettaseconds() {
-        return this.valueAs(MetricPrefix.Zetta);
+        return this.ValueAs(MetricPrefix.Zetta);
     }
 
     /// <summary>
@@ -95,7 +95,7 @@ public class Duration : MetricMeasurement, ISquareRootable<Duration> {
     /// </summary>
     /// <returns>Exaseconds</returns>
     public Scientific TotalExaseconds() {
-        return this.valueAs(MetricPrefix.Exa);
+        return this.ValueAs(MetricPrefix.Exa);
     }
 
     /// <summary>
@@ -111,7 +111,7 @@ public class Duration : MetricMeasurement, ISquareRootable<Duration> {
     /// </summary>
     /// <returns>Petaseconds</returns>
     public Scientific TotalPetaseconds() {
-        return this.valueAs(MetricPrefix.Peta);
+        return this.ValueAs(MetricPrefix.Peta);
     }
 
     /// <summary>
@@ -127,7 +127,7 @@ public class Duration : MetricMeasurement, ISquareRootable<Duration> {
     /// </summary>
     /// <returns>Teraseconds</returns>
     public Scientific TotalTeraseconds() {
-        return this.valueAs(MetricPrefix.Tera);
+        return this.ValueAs(MetricPrefix.Tera);
     }
 
     /// <summary>
@@ -143,7 +143,7 @@ public class Duration : MetricMeasurement, ISquareRootable<Duration> {
     /// </summary>
     /// <returns>Gigaseconds</returns>
     public Scientific TotalGigaseconds() {
-        return this.valueAs(MetricPrefix.Giga);
+        return this.ValueAs(MetricPrefix.Giga);
     }
 
     /// <summary>
@@ -159,7 +159,7 @@ public class Duration : MetricMeasurement, ISquareRootable<Duration> {
     /// </summary>
     /// <returns>Megaseconds</returns>
     public Scientific TotalMegaseconds() {
-        return this.valueAs(MetricPrefix.Mega);
+        return this.ValueAs(MetricPrefix.Mega);
     }
 
     /// <summary>
@@ -175,7 +175,7 @@ public class Duration : MetricMeasurement, ISquareRootable<Duration> {
     /// </summary>
     /// <returns>Kiloseconds</returns>
     public Scientific TotalKiloseconds() {
-        return this.valueAs(MetricPrefix.Kilo);
+        return this.ValueAs(MetricPrefix.Kilo);
     }
 
     /// <summary>
@@ -191,7 +191,7 @@ public class Duration : MetricMeasurement, ISquareRootable<Duration> {
     /// </summary>
     /// <returns>Hectoseconds</returns>
     public Scientific TotalHectoseconds() {
-        return this.valueAs(MetricPrefix.Hecto);
+        return this.ValueAs(MetricPrefix.Hecto);
     }
 
     /// <summary>
@@ -207,7 +207,7 @@ public class Duration : MetricMeasurement, ISquareRootable<Duration> {
     /// </summary>
     /// <returns>Decaseconds</returns>
     public Scientific TotalDecaseconds() {
-        return this.valueAs(MetricPrefix.Deca);
+        return this.ValueAs(MetricPrefix.Deca);
     }
 
     /// <summary>
@@ -223,7 +223,7 @@ public class Duration : MetricMeasurement, ISquareRootable<Duration> {
     /// </summary>
     /// <returns>Deciseconds</returns>
     public Scientific TotalDeciseconds() {
-        return this.valueAs(MetricPrefix.Deci);
+        return this.ValueAs(MetricPrefix.Deci);
     }
 
     /// <summary>
@@ -239,7 +239,7 @@ public class Duration : MetricMeasurement, ISquareRootable<Duration> {
     /// </summary>
     /// <returns>Centiseconds</returns>
     public Scientific TotalCentiseconds() {
-        return this.valueAs(MetricPrefix.Centi);
+        return this.ValueAs(MetricPrefix.Centi);
     }
 
     /// <summary>
@@ -255,7 +255,7 @@ public class Duration : MetricMeasurement, ISquareRootable<Duration> {
     /// </summary>
     /// <returns>Milliseconds</returns>
     public Scientific TotalMilliseconds() {
-        return this.valueAs(MetricPrefix.Milli);
+        return this.ValueAs(MetricPrefix.Milli);
     }
 
     /// <summary>
@@ -271,7 +271,7 @@ public class Duration : MetricMeasurement, ISquareRootable<Duration> {
     /// </summary>
     /// <returns>Microseconds</returns>
     public Scientific TotalMicroseconds() {
-        return this.valueAs(MetricPrefix.Micro);
+        return this.ValueAs(MetricPrefix.Micro);
     }
 
     /// <summary>
@@ -287,7 +287,7 @@ public class Duration : MetricMeasurement, ISquareRootable<Duration> {
     /// </summary>
     /// <returns>Nanoseconds</returns>
     public Scientific TotalNanoseconds() {
-        return this.valueAs(MetricPrefix.Nano);
+        return this.ValueAs(MetricPrefix.Nano);
     }
 
     /// <summary>
@@ -303,7 +303,7 @@ public class Duration : MetricMeasurement, ISquareRootable<Duration> {
     /// </summary>
     /// <returns>Picoseconds</returns>
     public Scientific TotalPicoseconds() {
-        return this.valueAs(MetricPrefix.Pico);
+        return this.ValueAs(MetricPrefix.Pico);
     }
 
     /// <summary>
@@ -319,7 +319,7 @@ public class Duration : MetricMeasurement, ISquareRootable<Duration> {
     /// </summary>
     /// <returns>Femtoseconds</returns>
     public Scientific TotalFemtoseconds() {
-        return this.valueAs(MetricPrefix.Femto);
+        return this.ValueAs(MetricPrefix.Femto);
     }
 
     /// <summary>
@@ -335,7 +335,7 @@ public class Duration : MetricMeasurement, ISquareRootable<Duration> {
     /// </summary>
     /// <returns>Attoseconds</returns>
     public Scientific TotalAttoseconds() {
-        return this.valueAs(MetricPrefix.Atto);
+        return this.ValueAs(MetricPrefix.Atto);
     }
 
     /// <summary>
@@ -351,7 +351,7 @@ public class Duration : MetricMeasurement, ISquareRootable<Duration> {
     /// </summary>
     /// <returns>Zeptoseconds</returns>
     public Scientific TotalZeptoseconds() {
-        return this.valueAs(MetricPrefix.Zepto);
+        return this.ValueAs(MetricPrefix.Zepto);
     }
 
 
@@ -368,7 +368,7 @@ public class Duration : MetricMeasurement, ISquareRootable<Duration> {
     /// </summary>
     /// <returns>Yoctoseconds</returns>
     public Scientific TotalYoctoseconds() {
-        return this.valueAs(MetricPrefix.Yocto);
+        return this.ValueAs(MetricPrefix.Yocto);
     }
 
     #endregion
@@ -387,7 +387,7 @@ public class Duration : MetricMeasurement, ISquareRootable<Duration> {
     /// </summary>
     /// <returns>minutes</returns>
     public Scientific TotalMinutes() {
-        return this.valueAs(MetricPrefix.None) / 60;
+        return this.ValueAs(MetricPrefix.None) / 60;
     }
 
     /// <summary>
@@ -403,7 +403,23 @@ public class Duration : MetricMeasurement, ISquareRootable<Duration> {
     /// </summary>
     /// <returns>hours</returns>
     public Scientific TotalHours() {
-        return this.valueAs(MetricPrefix.None) / 3600;
+        return this.ValueAs(MetricPrefix.None) / 3600;
+    }
+
+    /// <summary>
+    /// Create a duration measured in days
+    /// </summary>
+    /// <param name="value">days</param>
+    /// <returns>Duration</returns>
+    public static Duration Days(Scientific value) {
+        return Duration.Hours(24 * value);
+    }
+    /// <summary>
+    /// Total value of this duration in days
+    /// </summary>
+    /// <returns>days</returns>
+    public Scientific TotalDays() {
+        return this.TotalHours() / 24;
     }
     #endregion
 

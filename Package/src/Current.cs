@@ -10,16 +10,16 @@ public class Current : MetricMeasurement {
 
     #region operators
     public static Current operator* (Scientific l, Current r) {
-        return new Current(l + r.valueAs(MetricPrefix.None), MetricPrefix.None);
+        return new Current(l + r.ValueAs(MetricPrefix.None), MetricPrefix.None);
     }
     public static Current operator* (Current l, Scientific r) {
-        return new Current(l.valueAs(MetricPrefix.None) + r, MetricPrefix.None);
+        return new Current(l.ValueAs(MetricPrefix.None) + r, MetricPrefix.None);
     }
     public static Current operator+ (Current l, Current r) {
-        return new Current(l.valueAs(MetricPrefix.None) + r.valueAs(MetricPrefix.None), MetricPrefix.None);
+        return new Current(l.ValueAs(MetricPrefix.None) + r.ValueAs(MetricPrefix.None), MetricPrefix.None);
     }
     public static Current operator- (Current l, Current r) {
-        return new Current(l.valueAs(MetricPrefix.None) - r.valueAs(MetricPrefix.None), MetricPrefix.None);
+        return new Current(l.ValueAs(MetricPrefix.None) - r.ValueAs(MetricPrefix.None), MetricPrefix.None);
     }
     #endregion
 
@@ -38,7 +38,7 @@ public class Current : MetricMeasurement {
     /// </summary>
     /// <returns>amperes</returns>
     public Scientific TotalAmperes() {
-        return this.valueAs(MetricPrefix.None);
+        return this.ValueAs(MetricPrefix.None);
     }
 
     /// <summary>
@@ -54,7 +54,7 @@ public class Current : MetricMeasurement {
     /// </summary>
     /// <returns>Yottaamperes</returns>
     public Scientific TotalYottaamperes() {
-        return this.valueAs(MetricPrefix.Yotta);
+        return this.ValueAs(MetricPrefix.Yotta);
     }
 
     /// <summary>
@@ -70,7 +70,7 @@ public class Current : MetricMeasurement {
     /// </summary>
     /// <returns>Zettaamperes</returns>
     public Scientific TotalZettaamperes() {
-        return this.valueAs(MetricPrefix.Zetta);
+        return this.ValueAs(MetricPrefix.Zetta);
     }
 
     /// <summary>
@@ -86,7 +86,7 @@ public class Current : MetricMeasurement {
     /// </summary>
     /// <returns>Exaamperes</returns>
     public Scientific TotalExaamperes() {
-        return this.valueAs(MetricPrefix.Exa);
+        return this.ValueAs(MetricPrefix.Exa);
     }
 
     /// <summary>
@@ -102,7 +102,7 @@ public class Current : MetricMeasurement {
     /// </summary>
     /// <returns>Petaamperes</returns>
     public Scientific TotalPetaamperes() {
-        return this.valueAs(MetricPrefix.Peta);
+        return this.ValueAs(MetricPrefix.Peta);
     }
 
     /// <summary>
@@ -118,7 +118,7 @@ public class Current : MetricMeasurement {
     /// </summary>
     /// <returns>Teraamperes</returns>
     public Scientific TotalTeraamperes() {
-        return this.valueAs(MetricPrefix.Tera);
+        return this.ValueAs(MetricPrefix.Tera);
     }
 
     /// <summary>
@@ -134,7 +134,7 @@ public class Current : MetricMeasurement {
     /// </summary>
     /// <returns>Gigaamperes</returns>
     public Scientific TotalGigaamperes() {
-        return this.valueAs(MetricPrefix.Giga);
+        return this.ValueAs(MetricPrefix.Giga);
     }
 
     /// <summary>
@@ -150,7 +150,7 @@ public class Current : MetricMeasurement {
     /// </summary>
     /// <returns>Megaamperes</returns>
     public Scientific TotalMegaamperes() {
-        return this.valueAs(MetricPrefix.Mega);
+        return this.ValueAs(MetricPrefix.Mega);
     }
 
     /// <summary>
@@ -166,7 +166,7 @@ public class Current : MetricMeasurement {
     /// </summary>
     /// <returns>Kiloamperes</returns>
     public Scientific TotalKiloamperes() {
-        return this.valueAs(MetricPrefix.Kilo);
+        return this.ValueAs(MetricPrefix.Kilo);
     }
 
     /// <summary>
@@ -182,7 +182,7 @@ public class Current : MetricMeasurement {
     /// </summary>
     /// <returns>Hectoamperes</returns>
     public Scientific TotalHectoamperes() {
-        return this.valueAs(MetricPrefix.Hecto);
+        return this.ValueAs(MetricPrefix.Hecto);
     }
 
     /// <summary>
@@ -198,7 +198,7 @@ public class Current : MetricMeasurement {
     /// </summary>
     /// <returns>Decaamperes</returns>
     public Scientific TotalDecaamperes() {
-        return this.valueAs(MetricPrefix.Deca);
+        return this.ValueAs(MetricPrefix.Deca);
     }
 
     /// <summary>
@@ -214,7 +214,7 @@ public class Current : MetricMeasurement {
     /// </summary>
     /// <returns>Deciamperes</returns>
     public Scientific TotalDeciamperes() {
-        return this.valueAs(MetricPrefix.Deci);
+        return this.ValueAs(MetricPrefix.Deci);
     }
 
     /// <summary>
@@ -230,7 +230,7 @@ public class Current : MetricMeasurement {
     /// </summary>
     /// <returns>Centiamperes</returns>
     public Scientific TotalCentiamperes() {
-        return this.valueAs(MetricPrefix.Centi);
+        return this.ValueAs(MetricPrefix.Centi);
     }
 
     /// <summary>
@@ -246,7 +246,7 @@ public class Current : MetricMeasurement {
     /// </summary>
     /// <returns>Milliamperes</returns>
     public Scientific TotalMilliamperes() {
-        return this.valueAs(MetricPrefix.Milli);
+        return this.ValueAs(MetricPrefix.Milli);
     }
 
     /// <summary>
@@ -262,7 +262,7 @@ public class Current : MetricMeasurement {
     /// </summary>
     /// <returns>Microamperes</returns>
     public Scientific TotalMicroamperes() {
-        return this.valueAs(MetricPrefix.Micro);
+        return this.ValueAs(MetricPrefix.Micro);
     }
 
     /// <summary>
@@ -278,7 +278,7 @@ public class Current : MetricMeasurement {
     /// </summary>
     /// <returns>Nanoamperes</returns>
     public Scientific TotalNanoamperes() {
-        return this.valueAs(MetricPrefix.Nano);
+        return this.ValueAs(MetricPrefix.Nano);
     }
 
     /// <summary>
@@ -294,7 +294,7 @@ public class Current : MetricMeasurement {
     /// </summary>
     /// <returns>Picoamperes</returns>
     public Scientific TotalPicoamperes() {
-        return this.valueAs(MetricPrefix.Pico);
+        return this.ValueAs(MetricPrefix.Pico);
     }
 
     /// <summary>
@@ -310,7 +310,7 @@ public class Current : MetricMeasurement {
     /// </summary>
     /// <returns>Femtoamperes</returns>
     public Scientific TotalFemtoamperes() {
-        return this.valueAs(MetricPrefix.Femto);
+        return this.ValueAs(MetricPrefix.Femto);
     }
 
     /// <summary>
@@ -326,7 +326,7 @@ public class Current : MetricMeasurement {
     /// </summary>
     /// <returns>Attoamperes</returns>
     public Scientific TotalAttoamperes() {
-        return this.valueAs(MetricPrefix.Atto);
+        return this.ValueAs(MetricPrefix.Atto);
     }
 
     /// <summary>
@@ -342,7 +342,7 @@ public class Current : MetricMeasurement {
     /// </summary>
     /// <returns>Zeptoamperes</returns>
     public Scientific TotalZeptoamperes() {
-        return this.valueAs(MetricPrefix.Zepto);
+        return this.ValueAs(MetricPrefix.Zepto);
     }
 
 
@@ -359,7 +359,7 @@ public class Current : MetricMeasurement {
     /// </summary>
     /// <returns>Yoctoamperes</returns>
     public Scientific TotalYoctoamperes() {
-        return this.valueAs(MetricPrefix.Yocto);
+        return this.ValueAs(MetricPrefix.Yocto);
     }
 
     #endregion

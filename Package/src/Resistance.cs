@@ -10,16 +10,16 @@ public class Resistance : MetricMeasurement {
 
     #region operators
     public static Resistance operator* (Scientific l, Resistance r) {
-        return new Resistance(l + r.valueAs(MetricPrefix.None), MetricPrefix.None);
+        return new Resistance(l + r.ValueAs(MetricPrefix.None), MetricPrefix.None);
     }
     public static Resistance operator* (Resistance l, Scientific r) {
-        return new Resistance(l.valueAs(MetricPrefix.None) + r, MetricPrefix.None);
+        return new Resistance(l.ValueAs(MetricPrefix.None) + r, MetricPrefix.None);
     }
     public static Resistance operator+ (Resistance l, Resistance r) {
-        return new Resistance(l.valueAs(MetricPrefix.None) + r.valueAs(MetricPrefix.None), MetricPrefix.None);
+        return new Resistance(l.ValueAs(MetricPrefix.None) + r.ValueAs(MetricPrefix.None), MetricPrefix.None);
     }
     public static Resistance operator- (Resistance l, Resistance r) {
-        return new Resistance(l.valueAs(MetricPrefix.None) - r.valueAs(MetricPrefix.None), MetricPrefix.None);
+        return new Resistance(l.ValueAs(MetricPrefix.None) - r.ValueAs(MetricPrefix.None), MetricPrefix.None);
     }
     #endregion
 
@@ -38,7 +38,7 @@ public class Resistance : MetricMeasurement {
     /// </summary>
     /// <returns>ohms</returns>
     public Scientific TotalOhms() {
-        return this.valueAs(MetricPrefix.None);
+        return this.ValueAs(MetricPrefix.None);
     }
 
     /// <summary>
@@ -54,7 +54,7 @@ public class Resistance : MetricMeasurement {
     /// </summary>
     /// <returns>Yottaohms</returns>
     public Scientific TotalYottaohms() {
-        return this.valueAs(MetricPrefix.Yotta);
+        return this.ValueAs(MetricPrefix.Yotta);
     }
 
     /// <summary>
@@ -70,7 +70,7 @@ public class Resistance : MetricMeasurement {
     /// </summary>
     /// <returns>Zettaohms</returns>
     public Scientific TotalZettaohms() {
-        return this.valueAs(MetricPrefix.Zetta);
+        return this.ValueAs(MetricPrefix.Zetta);
     }
 
     /// <summary>
@@ -86,7 +86,7 @@ public class Resistance : MetricMeasurement {
     /// </summary>
     /// <returns>Exaohms</returns>
     public Scientific TotalExaohms() {
-        return this.valueAs(MetricPrefix.Exa);
+        return this.ValueAs(MetricPrefix.Exa);
     }
 
     /// <summary>
@@ -102,7 +102,7 @@ public class Resistance : MetricMeasurement {
     /// </summary>
     /// <returns>Petaohms</returns>
     public Scientific TotalPetaohms() {
-        return this.valueAs(MetricPrefix.Peta);
+        return this.ValueAs(MetricPrefix.Peta);
     }
 
     /// <summary>
@@ -118,7 +118,7 @@ public class Resistance : MetricMeasurement {
     /// </summary>
     /// <returns>Teraohms</returns>
     public Scientific TotalTeraohms() {
-        return this.valueAs(MetricPrefix.Tera);
+        return this.ValueAs(MetricPrefix.Tera);
     }
 
     /// <summary>
@@ -134,7 +134,7 @@ public class Resistance : MetricMeasurement {
     /// </summary>
     /// <returns>Gigaohms</returns>
     public Scientific TotalGigaohms() {
-        return this.valueAs(MetricPrefix.Giga);
+        return this.ValueAs(MetricPrefix.Giga);
     }
 
     /// <summary>
@@ -150,7 +150,7 @@ public class Resistance : MetricMeasurement {
     /// </summary>
     /// <returns>Megaohms</returns>
     public Scientific TotalMegaohms() {
-        return this.valueAs(MetricPrefix.Mega);
+        return this.ValueAs(MetricPrefix.Mega);
     }
 
     /// <summary>
@@ -166,7 +166,7 @@ public class Resistance : MetricMeasurement {
     /// </summary>
     /// <returns>Kiloohms</returns>
     public Scientific TotalKiloohms() {
-        return this.valueAs(MetricPrefix.Kilo);
+        return this.ValueAs(MetricPrefix.Kilo);
     }
 
     /// <summary>
@@ -182,7 +182,7 @@ public class Resistance : MetricMeasurement {
     /// </summary>
     /// <returns>Hectoohms</returns>
     public Scientific TotalHectoohms() {
-        return this.valueAs(MetricPrefix.Hecto);
+        return this.ValueAs(MetricPrefix.Hecto);
     }
 
     /// <summary>
@@ -198,7 +198,7 @@ public class Resistance : MetricMeasurement {
     /// </summary>
     /// <returns>Decaohms</returns>
     public Scientific TotalDecaohms() {
-        return this.valueAs(MetricPrefix.Deca);
+        return this.ValueAs(MetricPrefix.Deca);
     }
 
     /// <summary>
@@ -214,7 +214,7 @@ public class Resistance : MetricMeasurement {
     /// </summary>
     /// <returns>Deciohms</returns>
     public Scientific TotalDeciohms() {
-        return this.valueAs(MetricPrefix.Deci);
+        return this.ValueAs(MetricPrefix.Deci);
     }
 
     /// <summary>
@@ -230,7 +230,7 @@ public class Resistance : MetricMeasurement {
     /// </summary>
     /// <returns>Centiohms</returns>
     public Scientific TotalCentiohms() {
-        return this.valueAs(MetricPrefix.Centi);
+        return this.ValueAs(MetricPrefix.Centi);
     }
 
     /// <summary>
@@ -246,7 +246,7 @@ public class Resistance : MetricMeasurement {
     /// </summary>
     /// <returns>Milliohms</returns>
     public Scientific TotalMilliohms() {
-        return this.valueAs(MetricPrefix.Milli);
+        return this.ValueAs(MetricPrefix.Milli);
     }
 
     /// <summary>
@@ -262,7 +262,7 @@ public class Resistance : MetricMeasurement {
     /// </summary>
     /// <returns>Microohms</returns>
     public Scientific TotalMicroohms() {
-        return this.valueAs(MetricPrefix.Micro);
+        return this.ValueAs(MetricPrefix.Micro);
     }
 
     /// <summary>
@@ -278,7 +278,7 @@ public class Resistance : MetricMeasurement {
     /// </summary>
     /// <returns>Nanoohms</returns>
     public Scientific TotalNanoohms() {
-        return this.valueAs(MetricPrefix.Nano);
+        return this.ValueAs(MetricPrefix.Nano);
     }
 
     /// <summary>
@@ -294,7 +294,7 @@ public class Resistance : MetricMeasurement {
     /// </summary>
     /// <returns>Picoohms</returns>
     public Scientific TotalPicoohms() {
-        return this.valueAs(MetricPrefix.Pico);
+        return this.ValueAs(MetricPrefix.Pico);
     }
 
     /// <summary>
@@ -310,7 +310,7 @@ public class Resistance : MetricMeasurement {
     /// </summary>
     /// <returns>Femtoohms</returns>
     public Scientific TotalFemtoohms() {
-        return this.valueAs(MetricPrefix.Femto);
+        return this.ValueAs(MetricPrefix.Femto);
     }
 
     /// <summary>
@@ -326,7 +326,7 @@ public class Resistance : MetricMeasurement {
     /// </summary>
     /// <returns>Attoohms</returns>
     public Scientific TotalAttoohms() {
-        return this.valueAs(MetricPrefix.Atto);
+        return this.ValueAs(MetricPrefix.Atto);
     }
 
     /// <summary>
@@ -342,7 +342,7 @@ public class Resistance : MetricMeasurement {
     /// </summary>
     /// <returns>Zeptoohms</returns>
     public Scientific TotalZeptoohms() {
-        return this.valueAs(MetricPrefix.Zepto);
+        return this.ValueAs(MetricPrefix.Zepto);
     }
 
 
@@ -359,7 +359,7 @@ public class Resistance : MetricMeasurement {
     /// </summary>
     /// <returns>Yoctoohms</returns>
     public Scientific TotalYoctoohms() {
-        return this.valueAs(MetricPrefix.Yocto);
+        return this.ValueAs(MetricPrefix.Yocto);
     }
 
     #endregion

@@ -5,7 +5,7 @@ namespace Qkmaxware.Measurement {
 /// <summary>
 /// Measurement of a rate of change in speed
 /// </summary>
-public class Acceleration : DerivedMeasure, INumeric<Acceleration>, IScaleble<Scientific, Acceleration> {
+public class Acceleration : DerivedMeasure, INumeric<Acceleration>, IScalable<Scientific, Acceleration> {
     public static readonly Unit DefaultUnitOfMeasure = Speed.DefaultUnitOfMeasure/Duration.DefaultUnitOfMeasure;
     public override Unit UnitsOfMeasure => DefaultUnitOfMeasure;
 

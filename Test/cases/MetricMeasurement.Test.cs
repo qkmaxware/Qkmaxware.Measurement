@@ -13,7 +13,7 @@ public class MetricMeasurementTest {
     private class TestMeasure : MetricMeasurement {
         public override Unit UnitsOfMeasure => null;
         public TestMeasure(Scientific value, MetricPrefix prefix) : base(value, prefix) {}
-        public Scientific GetValueAs(MetricPrefix prefix) => this.valueAs(prefix);
+        public Scientific GetValueAs(MetricPrefix prefix) => this.ValueAs(prefix);
     }
 
     [TestMethod]

@@ -15,16 +15,16 @@ public class Mass : MetricMeasurement {
 
     #region operators
     public static Mass operator* (Scientific l, Mass r) {
-        return new Mass(l + r.valueAs(MetricPrefix.None), MetricPrefix.None);
+        return new Mass(l + r.ValueAs(MetricPrefix.None), MetricPrefix.None);
     }
     public static Mass operator* (Mass l, Scientific r) {
-        return new Mass(l.valueAs(MetricPrefix.None) + r, MetricPrefix.None);
+        return new Mass(l.ValueAs(MetricPrefix.None) + r, MetricPrefix.None);
     }
     public static Mass operator+ (Mass l, Mass r) {
-        return new Mass(l.valueAs(MetricPrefix.None) + r.valueAs(MetricPrefix.None), MetricPrefix.None);
+        return new Mass(l.ValueAs(MetricPrefix.None) + r.ValueAs(MetricPrefix.None), MetricPrefix.None);
     }
     public static Mass operator- (Mass l, Mass r) {
-        return new Mass(l.valueAs(MetricPrefix.None) - r.valueAs(MetricPrefix.None), MetricPrefix.None);
+        return new Mass(l.ValueAs(MetricPrefix.None) - r.ValueAs(MetricPrefix.None), MetricPrefix.None);
     }
     #endregion
 
@@ -43,7 +43,7 @@ public class Mass : MetricMeasurement {
     /// </summary>
     /// <returns>grams</returns>
     public Scientific TotalGrams() {
-        return this.valueAs(MetricPrefix.None);
+        return this.ValueAs(MetricPrefix.None);
     }
 
     /// <summary>
@@ -59,7 +59,7 @@ public class Mass : MetricMeasurement {
     /// </summary>
     /// <returns>Yottagrams</returns>
     public Scientific TotalYottagrams() {
-        return this.valueAs(MetricPrefix.Yotta);
+        return this.ValueAs(MetricPrefix.Yotta);
     }
 
     /// <summary>
@@ -75,7 +75,7 @@ public class Mass : MetricMeasurement {
     /// </summary>
     /// <returns>Zettagrams</returns>
     public Scientific TotalZettagrams() {
-        return this.valueAs(MetricPrefix.Zetta);
+        return this.ValueAs(MetricPrefix.Zetta);
     }
 
     /// <summary>
@@ -91,7 +91,7 @@ public class Mass : MetricMeasurement {
     /// </summary>
     /// <returns>Exagrams</returns>
     public Scientific TotalExagrams() {
-        return this.valueAs(MetricPrefix.Exa);
+        return this.ValueAs(MetricPrefix.Exa);
     }
 
     /// <summary>
@@ -107,7 +107,7 @@ public class Mass : MetricMeasurement {
     /// </summary>
     /// <returns>Petagrams</returns>
     public Scientific TotalPetagrams() {
-        return this.valueAs(MetricPrefix.Peta);
+        return this.ValueAs(MetricPrefix.Peta);
     }
 
     /// <summary>
@@ -123,7 +123,7 @@ public class Mass : MetricMeasurement {
     /// </summary>
     /// <returns>Teragrams</returns>
     public Scientific TotalTeragrams() {
-        return this.valueAs(MetricPrefix.Tera);
+        return this.ValueAs(MetricPrefix.Tera);
     }
 
     /// <summary>
@@ -139,7 +139,7 @@ public class Mass : MetricMeasurement {
     /// </summary>
     /// <returns>Gigagrams</returns>
     public Scientific TotalGigagrams() {
-        return this.valueAs(MetricPrefix.Giga);
+        return this.ValueAs(MetricPrefix.Giga);
     }
 
     /// <summary>
@@ -155,7 +155,7 @@ public class Mass : MetricMeasurement {
     /// </summary>
     /// <returns>Megagrams</returns>
     public Scientific TotalMegagrams() {
-        return this.valueAs(MetricPrefix.Mega);
+        return this.ValueAs(MetricPrefix.Mega);
     }
 
     /// <summary>
@@ -171,7 +171,7 @@ public class Mass : MetricMeasurement {
     /// </summary>
     /// <returns>Kilograms</returns>
     public Scientific TotalKilograms() {
-        return this.valueAs(MetricPrefix.Kilo);
+        return this.ValueAs(MetricPrefix.Kilo);
     }
 
     /// <summary>
@@ -187,7 +187,7 @@ public class Mass : MetricMeasurement {
     /// </summary>
     /// <returns>Hectograms</returns>
     public Scientific TotalHectograms() {
-        return this.valueAs(MetricPrefix.Hecto);
+        return this.ValueAs(MetricPrefix.Hecto);
     }
 
     /// <summary>
@@ -203,7 +203,7 @@ public class Mass : MetricMeasurement {
     /// </summary>
     /// <returns>Decagrams</returns>
     public Scientific TotalDecagrams() {
-        return this.valueAs(MetricPrefix.Deca);
+        return this.ValueAs(MetricPrefix.Deca);
     }
 
     /// <summary>
@@ -219,7 +219,7 @@ public class Mass : MetricMeasurement {
     /// </summary>
     /// <returns>Decigrams</returns>
     public Scientific TotalDecigrams() {
-        return this.valueAs(MetricPrefix.Deci);
+        return this.ValueAs(MetricPrefix.Deci);
     }
 
     /// <summary>
@@ -235,7 +235,7 @@ public class Mass : MetricMeasurement {
     /// </summary>
     /// <returns>Centigrams</returns>
     public Scientific TotalCentigrams() {
-        return this.valueAs(MetricPrefix.Centi);
+        return this.ValueAs(MetricPrefix.Centi);
     }
 
     /// <summary>
@@ -251,7 +251,7 @@ public class Mass : MetricMeasurement {
     /// </summary>
     /// <returns>Milligrams</returns>
     public Scientific TotalMilligrams() {
-        return this.valueAs(MetricPrefix.Milli);
+        return this.ValueAs(MetricPrefix.Milli);
     }
 
     /// <summary>
@@ -267,7 +267,7 @@ public class Mass : MetricMeasurement {
     /// </summary>
     /// <returns>Micrograms</returns>
     public Scientific TotalMicrograms() {
-        return this.valueAs(MetricPrefix.Micro);
+        return this.ValueAs(MetricPrefix.Micro);
     }
 
     /// <summary>
@@ -283,7 +283,7 @@ public class Mass : MetricMeasurement {
     /// </summary>
     /// <returns>Nanograms</returns>
     public Scientific TotalNanograms() {
-        return this.valueAs(MetricPrefix.Nano);
+        return this.ValueAs(MetricPrefix.Nano);
     }
 
     /// <summary>
@@ -299,7 +299,7 @@ public class Mass : MetricMeasurement {
     /// </summary>
     /// <returns>Picograms</returns>
     public Scientific TotalPicograms() {
-        return this.valueAs(MetricPrefix.Pico);
+        return this.ValueAs(MetricPrefix.Pico);
     }
 
     /// <summary>
@@ -315,7 +315,7 @@ public class Mass : MetricMeasurement {
     /// </summary>
     /// <returns>Femtograms</returns>
     public Scientific TotalFemtograms() {
-        return this.valueAs(MetricPrefix.Femto);
+        return this.ValueAs(MetricPrefix.Femto);
     }
 
     /// <summary>
@@ -331,7 +331,7 @@ public class Mass : MetricMeasurement {
     /// </summary>
     /// <returns>Attograms</returns>
     public Scientific TotalAttograms() {
-        return this.valueAs(MetricPrefix.Atto);
+        return this.ValueAs(MetricPrefix.Atto);
     }
 
     /// <summary>
@@ -347,7 +347,7 @@ public class Mass : MetricMeasurement {
     /// </summary>
     /// <returns>Zeptograms</returns>
     public Scientific TotalZeptograms() {
-        return this.valueAs(MetricPrefix.Zepto);
+        return this.ValueAs(MetricPrefix.Zepto);
     }
 
 
@@ -364,7 +364,7 @@ public class Mass : MetricMeasurement {
     /// </summary>
     /// <returns>Yoctograms</returns>
     public Scientific TotalYoctograms() {
-        return this.valueAs(MetricPrefix.Yocto);
+        return this.ValueAs(MetricPrefix.Yocto);
     }
 
     #endregion

@@ -40,7 +40,7 @@ public enum MetricPrefix {
 public abstract class MetricMeasurement : BaseMeasure {
     protected MetricMeasurement(Scientific value, MetricPrefix prefix) : base(value * new Scientific(1, (int)prefix)) {}
 
-    protected Scientific valueAs(MetricPrefix prefix) {
+    public Scientific ValueAs(MetricPrefix prefix) {
         if (prefix == MetricPrefix.None) {
             return this.InternalValue;
         } else {

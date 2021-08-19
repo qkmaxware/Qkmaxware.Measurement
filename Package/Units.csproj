@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Qkmaxware.Numbers" Version="1.0.7" />
+    <PackageReference Include="Qkmaxware.Numbers" Version="1.0.8" />
   </ItemGroup>
 
 </Project>

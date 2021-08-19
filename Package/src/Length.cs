@@ -5,7 +5,7 @@ namespace Qkmaxware.Measurement {
 /// <summary>
 /// A measurement of length or distance
 /// </summary>
-public class Length : MetricMeasurement, INumeric<Length>, IScaleble<Scientific, Length> {
+public class Length : MetricMeasurement, INumeric<Length>, IScalable<Scientific, Length> {
     public static readonly Unit DefaultUnitOfMeasure = new Unit("Metres", "m");
     public override Unit UnitsOfMeasure => DefaultUnitOfMeasure;
 
@@ -14,13 +14,13 @@ public class Length : MetricMeasurement, INumeric<Length>, IScaleble<Scientific,
     private Length (Scientific value, MetricPrefix prefix) : base(value, prefix) {}
 
     #region operators
-    public Length ScaleBy(Scientific scalar) => new Length(scalar * this.valueAs(MetricPrefix.None), MetricPrefix.None);
+    public Length ScaleBy(Scientific scalar) => new Length(scalar * this.ValueAs(MetricPrefix.None), MetricPrefix.None);
     public Length Negate() {
-        return new Length(-1 * this.valueAs(MetricPrefix.None), MetricPrefix.None);
+        return new Length(-1 * this.ValueAs(MetricPrefix.None), MetricPrefix.None);
     }
 
     public Length Sqrt() {
-        return new Length(this.valueAs(MetricPrefix.None).Sqrt(), MetricPrefix.None);
+        return new Length(this.ValueAs(MetricPrefix.None).Sqrt(), MetricPrefix.None);
     }
 
     public Length Add(Length rhs) {
@@ -32,24 +32,24 @@ public class Length : MetricMeasurement, INumeric<Length>, IScaleble<Scientific,
     }
 
     public Length MultiplyBy(Length rhs) {
-        return new Length(this.valueAs(MetricPrefix.None) * rhs.valueAs(MetricPrefix.None), MetricPrefix.None);
+        return new Length(this.ValueAs(MetricPrefix.None) * rhs.ValueAs(MetricPrefix.None), MetricPrefix.None);
     }
 
     public Length DivideBy(Length rhs) {
-        return new Length(this.valueAs(MetricPrefix.None) / rhs.valueAs(MetricPrefix.None), MetricPrefix.None);
+        return new Length(this.ValueAs(MetricPrefix.None) / rhs.ValueAs(MetricPrefix.None), MetricPrefix.None);
     }
     
     public static Length operator* (Scientific l, Length r) {
-        return new Length(l + r.valueAs(MetricPrefix.None), MetricPrefix.None);
+        return new Length(l + r.ValueAs(MetricPrefix.None), MetricPrefix.None);
     }
     public static Length operator* (Length l, Scientific r) {
-        return new Length(l.valueAs(MetricPrefix.None) + r, MetricPrefix.None);
+        return new Length(l.ValueAs(MetricPrefix.None) + r, MetricPrefix.None);
     }
     public static Length operator+ (Length l, Length r) {
-        return new Length(l.valueAs(MetricPrefix.None) + r.valueAs(MetricPrefix.None), MetricPrefix.None);
+        return new Length(l.ValueAs(MetricPrefix.None) + r.ValueAs(MetricPrefix.None), MetricPrefix.None);
     }
     public static Length operator- (Length l, Length r) {
-        return new Length(l.valueAs(MetricPrefix.None) - r.valueAs(MetricPrefix.None), MetricPrefix.None);
+        return new Length(l.ValueAs(MetricPrefix.None) - r.ValueAs(MetricPrefix.None), MetricPrefix.None);
     }
     #endregion
 
@@ -68,7 +68,7 @@ public class Length : MetricMeasurement, INumeric<Length>, IScaleble<Scientific,
     /// </summary>
     /// <returns>metres</returns>
     public Scientific TotalMetres() {
-        return this.valueAs(MetricPrefix.None);
+        return this.ValueAs(MetricPrefix.None);
     }
 
     /// <summary>
@@ -84,7 +84,7 @@ public class Length : MetricMeasurement, INumeric<Length>, IScaleble<Scientific,
     /// </summary>
     /// <returns>Yottametres</returns>
     public Scientific TotalYottametres() {
-        return this.valueAs(MetricPrefix.Yotta);
+        return this.ValueAs(MetricPrefix.Yotta);
     }
 
     /// <summary>
@@ -100,7 +100,7 @@ public class Length : MetricMeasurement, INumeric<Length>, IScaleble<Scientific,
     /// </summary>
     /// <returns>Zettametres</returns>
     public Scientific TotalZettametres() {
-        return this.valueAs(MetricPrefix.Zetta);
+        return this.ValueAs(MetricPrefix.Zetta);
     }
 
     /// <summary>
@@ -116,7 +116,7 @@ public class Length : MetricMeasurement, INumeric<Length>, IScaleble<Scientific,
     /// </summary>
     /// <returns>Exametres</returns>
     public Scientific TotalExametres() {
-        return this.valueAs(MetricPrefix.Exa);
+        return this.ValueAs(MetricPrefix.Exa);
     }
 
     /// <summary>
@@ -132,7 +132,7 @@ public class Length : MetricMeasurement, INumeric<Length>, IScaleble<Scientific,
     /// </summary>
     /// <returns>Petametres</returns>
     public Scientific TotalPetametres() {
-        return this.valueAs(MetricPrefix.Peta);
+        return this.ValueAs(MetricPrefix.Peta);
     }
 
     /// <summary>
@@ -148,7 +148,7 @@ public class Length : MetricMeasurement, INumeric<Length>, IScaleble<Scientific,
     /// </summary>
     /// <returns>Terametres</returns>
     public Scientific TotalTerametres() {
-        return this.valueAs(MetricPrefix.Tera);
+        return this.ValueAs(MetricPrefix.Tera);
     }
 
     /// <summary>
@@ -164,7 +164,7 @@ public class Length : MetricMeasurement, INumeric<Length>, IScaleble<Scientific,
     /// </summary>
     /// <returns>Gigametres</returns>
     public Scientific TotalGigametres() {
-        return this.valueAs(MetricPrefix.Giga);
+        return this.ValueAs(MetricPrefix.Giga);
     }
 
     /// <summary>
@@ -180,7 +180,7 @@ public class Length : MetricMeasurement, INumeric<Length>, IScaleble<Scientific,
     /// </summary>
     /// <returns>Megametres</returns>
     public Scientific TotalMegametres() {
-        return this.valueAs(MetricPrefix.Mega);
+        return this.ValueAs(MetricPrefix.Mega);
     }
 
     /// <summary>
@@ -196,7 +196,7 @@ public class Length : MetricMeasurement, INumeric<Length>, IScaleble<Scientific,
     /// </summary>
     /// <returns>Kilometres</returns>
     public Scientific TotalKilometres() {
-        return this.valueAs(MetricPrefix.Kilo);
+        return this.ValueAs(MetricPrefix.Kilo);
     }
 
     /// <summary>
@@ -212,7 +212,7 @@ public class Length : MetricMeasurement, INumeric<Length>, IScaleble<Scientific,
     /// </summary>
     /// <returns>Hectometres</returns>
     public Scientific TotalHectometres() {
-        return this.valueAs(MetricPrefix.Hecto);
+        return this.ValueAs(MetricPrefix.Hecto);
     }
 
     /// <summary>
@@ -228,7 +228,7 @@ public class Length : MetricMeasurement, INumeric<Length>, IScaleble<Scientific,
     /// </summary>
     /// <returns>Decametres</returns>
     public Scientific TotalDecametres() {
-        return this.valueAs(MetricPrefix.Deca);
+        return this.ValueAs(MetricPrefix.Deca);
     }
 
     /// <summary>
@@ -244,7 +244,7 @@ public class Length : MetricMeasurement, INumeric<Length>, IScaleble<Scientific,
     /// </summary>
     /// <returns>Decimetres</returns>
     public Scientific TotalDecimetres() {
-        return this.valueAs(MetricPrefix.Deci);
+        return this.ValueAs(MetricPrefix.Deci);
     }
 
     /// <summary>
@@ -260,7 +260,7 @@ public class Length : MetricMeasurement, INumeric<Length>, IScaleble<Scientific,
     /// </summary>
     /// <returns>Centimetres</returns>
     public Scientific TotalCentimetres() {
-        return this.valueAs(MetricPrefix.Centi);
+        return this.ValueAs(MetricPrefix.Centi);
     }
 
     /// <summary>
@@ -276,7 +276,7 @@ public class Length : MetricMeasurement, INumeric<Length>, IScaleble<Scientific,
     /// </summary>
     /// <returns>Millimetres</returns>
     public Scientific TotalMillimetres() {
-        return this.valueAs(MetricPrefix.Milli);
+        return this.ValueAs(MetricPrefix.Milli);
     }
 
     /// <summary>
@@ -292,7 +292,7 @@ public class Length : MetricMeasurement, INumeric<Length>, IScaleble<Scientific,
     /// </summary>
     /// <returns>Micrometres</returns>
     public Scientific TotalMicrometres() {
-        return this.valueAs(MetricPrefix.Micro);
+        return this.ValueAs(MetricPrefix.Micro);
     }
 
     /// <summary>
@@ -308,7 +308,7 @@ public class Length : MetricMeasurement, INumeric<Length>, IScaleble<Scientific,
     /// </summary>
     /// <returns>Nanometres</returns>
     public Scientific TotalNanometres() {
-        return this.valueAs(MetricPrefix.Nano);
+        return this.ValueAs(MetricPrefix.Nano);
     }
 
     /// <summary>
@@ -324,7 +324,7 @@ public class Length : MetricMeasurement, INumeric<Length>, IScaleble<Scientific,
     /// </summary>
     /// <returns>Picometres</returns>
     public Scientific TotalPicometres() {
-        return this.valueAs(MetricPrefix.Pico);
+        return this.ValueAs(MetricPrefix.Pico);
     }
 
     /// <summary>
@@ -340,7 +340,7 @@ public class Length : MetricMeasurement, INumeric<Length>, IScaleble<Scientific,
     /// </summary>
     /// <returns>Femtometres</returns>
     public Scientific TotalFemtometres() {
-        return this.valueAs(MetricPrefix.Femto);
+        return this.ValueAs(MetricPrefix.Femto);
     }
 
     /// <summary>
@@ -356,7 +356,7 @@ public class Length : MetricMeasurement, INumeric<Length>, IScaleble<Scientific,
     /// </summary>
     /// <returns>Attometres</returns>
     public Scientific TotalAttometres() {
-        return this.valueAs(MetricPrefix.Atto);
+        return this.ValueAs(MetricPrefix.Atto);
     }
 
     /// <summary>
@@ -372,7 +372,7 @@ public class Length : MetricMeasurement, INumeric<Length>, IScaleble<Scientific,
     /// </summary>
     /// <returns>Zeptometres</returns>
     public Scientific TotalZeptometres() {
-        return this.valueAs(MetricPrefix.Zepto);
+        return this.ValueAs(MetricPrefix.Zepto);
     }
 
 
@@ -389,7 +389,7 @@ public class Length : MetricMeasurement, INumeric<Length>, IScaleble<Scientific,
     /// </summary>
     /// <returns>Yoctometres</returns>
     public Scientific TotalYoctometres() {
-        return this.valueAs(MetricPrefix.Yocto);
+        return this.ValueAs(MetricPrefix.Yocto);
     }
 
     #endregion

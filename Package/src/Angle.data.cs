@@ -6,7 +6,7 @@ namespace Qkmaxware.Measurement {
 /// <summary>
 /// An angular measurement, internally stored in decimal degrees from 0 to 360. Static method for common mathematical uses of angles.
 /// </summary>
-public partial class Angle : BaseMeasure, INumeric<Angle>, IScaleble<Scientific, Angle> {
+public partial class Angle : BaseMeasure, INumeric<Angle>, IScalable<Scientific, Angle> {
 
     /*private Angle(double _internal) {
         // Wrap between 0 and 360 degrees

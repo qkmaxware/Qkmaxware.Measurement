@@ -10,16 +10,16 @@ public class Voltage : MetricMeasurement {
 
     #region operators
     public static Voltage operator* (Scientific l, Voltage r) {
-        return new Voltage(l + r.valueAs(MetricPrefix.None), MetricPrefix.None);
+        return new Voltage(l + r.ValueAs(MetricPrefix.None), MetricPrefix.None);
     }
     public static Voltage operator* (Voltage l, Scientific r) {
-        return new Voltage(l.valueAs(MetricPrefix.None) + r, MetricPrefix.None);
+        return new Voltage(l.ValueAs(MetricPrefix.None) + r, MetricPrefix.None);
     }
     public static Voltage operator+ (Voltage l, Voltage r) {
-        return new Voltage(l.valueAs(MetricPrefix.None) + r.valueAs(MetricPrefix.None), MetricPrefix.None);
+        return new Voltage(l.ValueAs(MetricPrefix.None) + r.ValueAs(MetricPrefix.None), MetricPrefix.None);
     }
     public static Voltage operator- (Voltage l, Voltage r) {
-        return new Voltage(l.valueAs(MetricPrefix.None) - r.valueAs(MetricPrefix.None), MetricPrefix.None);
+        return new Voltage(l.ValueAs(MetricPrefix.None) - r.ValueAs(MetricPrefix.None), MetricPrefix.None);
     }
     #endregion
 
@@ -38,7 +38,7 @@ public class Voltage : MetricMeasurement {
     /// </summary>
     /// <returns>volts</returns>
     public Scientific TotalVolts() {
-        return this.valueAs(MetricPrefix.None);
+        return this.ValueAs(MetricPrefix.None);
     }
 
     /// <summary>
@@ -54,7 +54,7 @@ public class Voltage : MetricMeasurement {
     /// </summary>
     /// <returns>Yottavolts</returns>
     public Scientific TotalYottavolts() {
-        return this.valueAs(MetricPrefix.Yotta);
+        return this.ValueAs(MetricPrefix.Yotta);
     }
 
     /// <summary>
@@ -70,7 +70,7 @@ public class Voltage : MetricMeasurement {
     /// </summary>
     /// <returns>Zettavolts</returns>
     public Scientific TotalZettavolts() {
-        return this.valueAs(MetricPrefix.Zetta);
+        return this.ValueAs(MetricPrefix.Zetta);
     }
 
     /// <summary>
@@ -86,7 +86,7 @@ public class Voltage : MetricMeasurement {
     /// </summary>
     /// <returns>Exavolts</returns>
     public Scientific TotalExavolts() {
-        return this.valueAs(MetricPrefix.Exa);
+        return this.ValueAs(MetricPrefix.Exa);
     }
 
     /// <summary>
@@ -102,7 +102,7 @@ public class Voltage : MetricMeasurement {
     /// </summary>
     /// <returns>Petavolts</returns>
     public Scientific TotalPetavolts() {
-        return this.valueAs(MetricPrefix.Peta);
+        return this.ValueAs(MetricPrefix.Peta);
     }
 
     /// <summary>
@@ -118,7 +118,7 @@ public class Voltage : MetricMeasurement {
     /// </summary>
     /// <returns>Teravolts</returns>
     public Scientific TotalTeravolts() {
-        return this.valueAs(MetricPrefix.Tera);
+        return this.ValueAs(MetricPrefix.Tera);
     }
 
     /// <summary>
@@ -134,7 +134,7 @@ public class Voltage : MetricMeasurement {
     /// </summary>
     /// <returns>Gigavolts</returns>
     public Scientific TotalGigavolts() {
-        return this.valueAs(MetricPrefix.Giga);
+        return this.ValueAs(MetricPrefix.Giga);
     }
 
     /// <summary>
@@ -150,7 +150,7 @@ public class Voltage : MetricMeasurement {
     /// </summary>
     /// <returns>Megavolts</returns>
     public Scientific TotalMegavolts() {
-        return this.valueAs(MetricPrefix.Mega);
+        return this.ValueAs(MetricPrefix.Mega);
     }
 
     /// <summary>
@@ -166,7 +166,7 @@ public class Voltage : MetricMeasurement {
     /// </summary>
     /// <returns>Kilovolts</returns>
     public Scientific TotalKilovolts() {
-        return this.valueAs(MetricPrefix.Kilo);
+        return this.ValueAs(MetricPrefix.Kilo);
     }
 
     /// <summary>
@@ -182,7 +182,7 @@ public class Voltage : MetricMeasurement {
     /// </summary>
     /// <returns>Hectovolts</returns>
     public Scientific TotalHectovolts() {
-        return this.valueAs(MetricPrefix.Hecto);
+        return this.ValueAs(MetricPrefix.Hecto);
     }
 
     /// <summary>
@@ -198,7 +198,7 @@ public class Voltage : MetricMeasurement {
     /// </summary>
     /// <returns>Decavolts</returns>
     public Scientific TotalDecavolts() {
-        return this.valueAs(MetricPrefix.Deca);
+        return this.ValueAs(MetricPrefix.Deca);
     }
 
     /// <summary>
@@ -214,7 +214,7 @@ public class Voltage : MetricMeasurement {
     /// </summary>
     /// <returns>Decivolts</returns>
     public Scientific TotalDecivolts() {
-        return this.valueAs(MetricPrefix.Deci);
+        return this.ValueAs(MetricPrefix.Deci);
     }
 
     /// <summary>
@@ -230,7 +230,7 @@ public class Voltage : MetricMeasurement {
     /// </summary>
     /// <returns>Centivolts</returns>
     public Scientific TotalCentivolts() {
-        return this.valueAs(MetricPrefix.Centi);
+        return this.ValueAs(MetricPrefix.Centi);
     }
 
     /// <summary>
@@ -246,7 +246,7 @@ public class Voltage : MetricMeasurement {
     /// </summary>
     /// <returns>Millivolts</returns>
     public Scientific TotalMillivolts() {
-        return this.valueAs(MetricPrefix.Milli);
+        return this.ValueAs(MetricPrefix.Milli);
     }
 
     /// <summary>
@@ -262,7 +262,7 @@ public class Voltage : MetricMeasurement {
     /// </summary>
     /// <returns>Microvolts</returns>
     public Scientific TotalMicrovolts() {
-        return this.valueAs(MetricPrefix.Micro);
+        return this.ValueAs(MetricPrefix.Micro);
     }
 
     /// <summary>
@@ -278,7 +278,7 @@ public class Voltage : MetricMeasurement {
     /// </summary>
     /// <returns>Nanovolts</returns>
     public Scientific TotalNanovolts() {
-        return this.valueAs(MetricPrefix.Nano);
+        return this.ValueAs(MetricPrefix.Nano);
     }
 
     /// <summary>
@@ -294,7 +294,7 @@ public class Voltage : MetricMeasurement {
     /// </summary>
     /// <returns>Picovolts</returns>
     public Scientific TotalPicovolts() {
-        return this.valueAs(MetricPrefix.Pico);
+        return this.ValueAs(MetricPrefix.Pico);
     }
 
     /// <summary>
@@ -310,7 +310,7 @@ public class Voltage : MetricMeasurement {
     /// </summary>
     /// <returns>Femtovolts</returns>
     public Scientific TotalFemtovolts() {
-        return this.valueAs(MetricPrefix.Femto);
+        return this.ValueAs(MetricPrefix.Femto);
     }
 
     /// <summary>
@@ -326,7 +326,7 @@ public class Voltage : MetricMeasurement {
     /// </summary>
     /// <returns>Attovolts</returns>
     public Scientific TotalAttovolts() {
-        return this.valueAs(MetricPrefix.Atto);
+        return this.ValueAs(MetricPrefix.Atto);
     }
 
     /// <summary>
@@ -342,7 +342,7 @@ public class Voltage : MetricMeasurement {
     /// </summary>
     /// <returns>Zeptovolts</returns>
     public Scientific TotalZeptovolts() {
-        return this.valueAs(MetricPrefix.Zepto);
+        return this.ValueAs(MetricPrefix.Zepto);
     }
 
 
@@ -359,7 +359,7 @@ public class Voltage : MetricMeasurement {
     /// </summary>
     /// <returns>Yoctovolts</returns>
     public Scientific TotalYoctovolts() {
-        return this.valueAs(MetricPrefix.Yocto);
+        return this.ValueAs(MetricPrefix.Yocto);
     }
 
     #endregion
