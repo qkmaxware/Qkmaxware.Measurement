@@ -5,13 +5,16 @@ namespace Qkmaxware.Measurement {
 /// <summary>
 /// A measurement of length or distance
 /// </summary>
-public class Length : MetricMeasurement, INumeric<Length> {
+public class Length : MetricMeasurement, INumeric<Length>, IScaleble<Scientific, Length> {
     public static readonly Unit DefaultUnitOfMeasure = new Unit("Metres", "m");
     public override Unit UnitsOfMeasure => DefaultUnitOfMeasure;
+
+    public static readonly Length Zero = new Length(0, MetricPrefix.None);
 
     private Length (Scientific value, MetricPrefix prefix) : base(value, prefix) {}
 
     #region operators
+    public Length ScaleBy(Scientific scalar) => new Length(scalar * this.valueAs(MetricPrefix.None), MetricPrefix.None);
     public Length Negate() {
         return new Length(-1 * this.valueAs(MetricPrefix.None), MetricPrefix.None);
     }

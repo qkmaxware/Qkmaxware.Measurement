@@ -5,7 +5,7 @@ namespace Qkmaxware.Measurement {
 /// <summary>
 /// Measurement of a rate of change in speed
 /// </summary>
-public class Acceleration : DerivedMeasure, INumeric<Acceleration> {
+public class Acceleration : DerivedMeasure, INumeric<Acceleration>, IScaleble<Scientific, Acceleration> {
     public static readonly Unit DefaultUnitOfMeasure = Speed.DefaultUnitOfMeasure/Duration.DefaultUnitOfMeasure;
     public override Unit UnitsOfMeasure => DefaultUnitOfMeasure;
 
@@ -24,6 +24,7 @@ public class Acceleration : DerivedMeasure, INumeric<Acceleration> {
     }
 
     #region operators 
+    public Acceleration ScaleBy(Scientific value) => new Acceleration(this.Length.ScaleBy(value), this.Time1, this.Time2);
     public Acceleration Negate() {
         return new Acceleration(this.Length.Negate(), this.Time1, this.Time2);
     }

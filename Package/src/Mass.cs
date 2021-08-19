@@ -9,6 +9,7 @@ public class Mass : MetricMeasurement {
     public static readonly Unit DefaultUnitOfMeasure = new Unit("Grams", "g");
     public override Unit UnitsOfMeasure => DefaultUnitOfMeasure;
 
+    public static readonly Mass Zero = new Mass(0, MetricPrefix.None);
 
     private Mass (Scientific value, MetricPrefix prefix) : base(value, prefix) {}
 

@@ -9,6 +9,9 @@ public class Duration : MetricMeasurement, ISquareRootable<Duration> {
     public static readonly Unit DefaultUnitOfMeasure = new Unit("Seconds", "s");
     public override Unit UnitsOfMeasure => DefaultUnitOfMeasure;
     
+    public static readonly Duration OneSecond = new Duration(1, MetricPrefix.None);
+    public static readonly Duration Infinite = new Duration(double.PositiveInfinity, MetricPrefix.None);
+
     private Duration (Scientific value, MetricPrefix prefix) : base(value, prefix) {}
 
     #region operators

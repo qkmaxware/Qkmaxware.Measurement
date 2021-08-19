@@ -5,9 +5,11 @@ namespace Qkmaxware.Measurement {
 /// <summary>
 /// Measurement of a speed
 /// </summary>
-public class Speed : DerivedMeasure, INumeric<Speed> {
+public class Speed : DerivedMeasure, INumeric<Speed>, IScaleble<Scientific, Speed> {
     public static readonly Unit DefaultUnitOfMeasure = Length.DefaultUnitOfMeasure/Duration.DefaultUnitOfMeasure;
     public override Unit UnitsOfMeasure => DefaultUnitOfMeasure;
+
+    public static readonly Speed Zero = new Speed(Length.Zero, Duration.OneSecond);
 
     public Length Length {get; private set;}
     public Duration Time {get; private set;}
@@ -22,6 +24,7 @@ public class Speed : DerivedMeasure, INumeric<Speed> {
     }
 
     #region operators
+    public Speed ScaleBy(Scientific value) => new Speed(this.Length.ScaleBy(value), this.Time);
     public Speed Negate() {
         return new Speed(this.Length.Negate(), this.Time);
     }
