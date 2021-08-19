@@ -5,13 +5,16 @@ namespace Qkmaxware.Measurement {
 /// <summary>
 /// A measurement of a length of time
 /// </summary>
-public class Duration : MetricMeasurement {
+public class Duration : MetricMeasurement, ISquareRootable<Duration> {
     public static readonly Unit DefaultUnitOfMeasure = new Unit("Seconds", "s");
     public override Unit UnitsOfMeasure => DefaultUnitOfMeasure;
     
     private Duration (Scientific value, MetricPrefix prefix) : base(value, prefix) {}
 
     #region operators
+    public Duration Sqrt() {
+        return new Duration(this.valueAs(MetricPrefix.None).Sqrt(), MetricPrefix.None);
+    }
     public static Duration operator* (Scientific l, Duration r) {
         return new Duration(l + r.valueAs(MetricPrefix.None), MetricPrefix.None);
     }

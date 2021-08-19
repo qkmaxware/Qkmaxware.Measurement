@@ -6,7 +6,7 @@ namespace Qkmaxware.Measurement {
 /// <summary>
 /// An angular measurement, internally stored in decimal degrees from 0 to 360. Static method for common mathematical uses of angles.
 /// </summary>
-public partial class Angle : BaseMeasure {
+public partial class Angle : BaseMeasure, INumeric<Angle> {
 
     /*private Angle(double _internal) {
         // Wrap between 0 and 360 degrees
@@ -20,6 +20,30 @@ public partial class Angle : BaseMeasure {
     //private Angle(Arbitrary _internal) : base(( _internal - 360 * (_internal / 360d).Floor() )) {}
 
     #region operators
+    public Angle Negate() {
+        return Angle.Degrees(-1 * this.TotalDegrees());
+    }
+
+    public Angle Sqrt() {
+        return Angle.Degrees(this.TotalDegrees().Sqrt());
+    }
+
+    public Angle Add(Angle rhs) {
+        return this + rhs;
+    }
+
+    public Angle Subtract(Angle rhs) {
+        return this - rhs;
+    }
+
+    public Angle MultiplyBy(Angle rhs) {
+        return Angle.Degrees(this.TotalDegrees() * rhs.TotalDegrees());
+    }
+
+    public Angle DivideBy(Angle rhs) {
+        return Angle.Degrees(this.TotalDegrees() / rhs.TotalDegrees());
+    }
+
     public static Angle operator* (Scientific l, Angle r) {
         return new Angle(l + r.InternalValue);
     }

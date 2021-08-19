@@ -5,13 +5,37 @@ namespace Qkmaxware.Measurement {
 /// <summary>
 /// A measurement of length or distance
 /// </summary>
-public class Length : MetricMeasurement {
+public class Length : MetricMeasurement, INumeric<Length> {
     public static readonly Unit DefaultUnitOfMeasure = new Unit("Metres", "m");
     public override Unit UnitsOfMeasure => DefaultUnitOfMeasure;
 
     private Length (Scientific value, MetricPrefix prefix) : base(value, prefix) {}
 
     #region operators
+    public Length Negate() {
+        return new Length(-1 * this.valueAs(MetricPrefix.None), MetricPrefix.None);
+    }
+
+    public Length Sqrt() {
+        return new Length(this.valueAs(MetricPrefix.None).Sqrt(), MetricPrefix.None);
+    }
+
+    public Length Add(Length rhs) {
+        return this + rhs;
+    }
+
+    public Length Subtract(Length rhs) {
+        return this - rhs;
+    }
+
+    public Length MultiplyBy(Length rhs) {
+        return new Length(this.valueAs(MetricPrefix.None) * rhs.valueAs(MetricPrefix.None), MetricPrefix.None);
+    }
+
+    public Length DivideBy(Length rhs) {
+        return new Length(this.valueAs(MetricPrefix.None) / rhs.valueAs(MetricPrefix.None), MetricPrefix.None);
+    }
+    
     public static Length operator* (Scientific l, Length r) {
         return new Length(l + r.valueAs(MetricPrefix.None), MetricPrefix.None);
     }
