@@ -6,6 +6,8 @@ public class Voltage : MetricMeasurement {
     public static readonly Unit DefaultUnitOfMeasure = new Unit("Volts", "V");
     public override Unit UnitsOfMeasure => DefaultUnitOfMeasure;
     
+    public static readonly Voltage Zero = new Voltage(Scientific.Zero, MetricPrefix.None);
+
     private Voltage (Scientific value, MetricPrefix prefix) : base(value, prefix) {}
 
     #region operators

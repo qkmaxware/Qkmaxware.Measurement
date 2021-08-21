@@ -5,7 +5,9 @@ namespace Qkmaxware.Measurement {
 public class Resistance : MetricMeasurement {
     public static readonly Unit DefaultUnitOfMeasure = new Unit("Ohms", "A");
     public override Unit UnitsOfMeasure => DefaultUnitOfMeasure;
-    
+
+    public static readonly Resistance Zero = new Resistance(Scientific.Zero, MetricPrefix.None);
+
     private Resistance (Scientific value, MetricPrefix prefix) : base(value, prefix) {}
 
     #region operators

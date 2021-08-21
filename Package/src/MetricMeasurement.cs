@@ -38,15 +38,14 @@ public enum MetricPrefix {
 /// Base class for measurements that use the metric system
 /// </summary>
 public abstract class MetricMeasurement : BaseMeasure {
-    protected MetricMeasurement(Scientific value, MetricPrefix prefix) : base(value * new Scientific(1, (int)prefix)) {}
+    protected MetricMeasurement(Scientific value, MetricPrefix prefix) : base(value.x10((int)prefix)) {}
 
     public Scientific ValueAs(MetricPrefix prefix) {
         if (prefix == MetricPrefix.None) {
             return this.InternalValue;
         } else {
             var exponent = (int)prefix;
-            var factor = new Scientific(1, -exponent);
-            return this.InternalValue * factor; 
+            return this.InternalValue.x10(-exponent);
         }
     }
 

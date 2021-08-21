@@ -9,6 +9,8 @@ public class Temperature : BaseMeasure {
     public static readonly Unit DefaultUnitOfMeasure = new Unit("Kelvin", "K");
     public override Unit UnitsOfMeasure => DefaultUnitOfMeasure;
 
+    public static readonly Temperature Zero = new Temperature(Scientific.Zero);
+
     /// <summary>
     /// Create a new temperature limited by absolute 0
     /// </summary>

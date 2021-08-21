@@ -6,6 +6,8 @@ public class Current : MetricMeasurement {
     public static readonly Unit DefaultUnitOfMeasure = new Unit("Amperes", "A");
     public override Unit UnitsOfMeasure => DefaultUnitOfMeasure;
     
+    public static readonly Current Zero = new Current(Scientific.Zero, MetricPrefix.None);
+
     private Current (Scientific value, MetricPrefix prefix) : base(value, prefix) {}
 
     #region operators

@@ -16,6 +16,8 @@ public partial class Angle : BaseMeasure, INumeric<Angle>, IScalable<Scientific,
     public static readonly Unit DefaultUnitOfMeasure = new Unit("Degrees", "°");
     public override Unit UnitsOfMeasure => DefaultUnitOfMeasure;
 
+    public static readonly Angle Zero = new Angle(Scientific.Zero);
+
     private Angle(Scientific _internal) : base(( _internal - 360 * (_internal / 360d).Floor() )) {}
     //private Angle(Arbitrary _internal) : base(( _internal - 360 * (_internal / 360d).Floor() )) {}
 
