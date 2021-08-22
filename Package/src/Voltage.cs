@@ -12,10 +12,10 @@ public class Voltage : MetricMeasurement {
 
     #region operators
     public static Voltage operator* (Scientific l, Voltage r) {
-        return new Voltage(l + r.ValueAs(MetricPrefix.None), MetricPrefix.None);
+        return new Voltage(l * r.ValueAs(MetricPrefix.None), MetricPrefix.None);
     }
     public static Voltage operator* (Voltage l, Scientific r) {
-        return new Voltage(l.ValueAs(MetricPrefix.None) + r, MetricPrefix.None);
+        return new Voltage(l.ValueAs(MetricPrefix.None) * r, MetricPrefix.None);
     }
     public static Voltage operator+ (Voltage l, Voltage r) {
         return new Voltage(l.ValueAs(MetricPrefix.None) + r.ValueAs(MetricPrefix.None), MetricPrefix.None);

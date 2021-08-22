@@ -48,10 +48,10 @@ public partial class Angle : BaseMeasure, INumeric<Angle>, IScalable<Scientific,
     }
 
     public static Angle operator* (Scientific l, Angle r) {
-        return new Angle(l + r.InternalValue);
+        return new Angle(l * r.InternalValue);
     }
     public static Angle operator* (Angle l, Scientific r) {
-        return new Angle(l.InternalValue + r);
+        return new Angle(l.InternalValue * r);
     }
     public static Angle operator+ (Angle l, Angle r) {
         return new Angle(l.InternalValue + r.InternalValue);

@@ -40,10 +40,10 @@ public class Force : MetricMeasurement, INumeric<Force>, IScalable<Scientific, F
     }
     
     public static Force operator* (Scientific l, Force r) {
-        return new Force(l + r.ValueAs(MetricPrefix.None), MetricPrefix.None);
+        return new Force(l * r.ValueAs(MetricPrefix.None), MetricPrefix.None);
     }
     public static Force operator* (Force l, Scientific r) {
-        return new Force(l.ValueAs(MetricPrefix.None) + r, MetricPrefix.None);
+        return new Force(l.ValueAs(MetricPrefix.None) * r, MetricPrefix.None);
     }
     public static Force operator+ (Force l, Force r) {
         return new Force(l.ValueAs(MetricPrefix.None) + r.ValueAs(MetricPrefix.None), MetricPrefix.None);

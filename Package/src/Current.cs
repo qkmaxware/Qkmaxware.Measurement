@@ -12,10 +12,10 @@ public class Current : MetricMeasurement {
 
     #region operators
     public static Current operator* (Scientific l, Current r) {
-        return new Current(l + r.ValueAs(MetricPrefix.None), MetricPrefix.None);
+        return new Current(l * r.ValueAs(MetricPrefix.None), MetricPrefix.None);
     }
     public static Current operator* (Current l, Scientific r) {
-        return new Current(l.ValueAs(MetricPrefix.None) + r, MetricPrefix.None);
+        return new Current(l.ValueAs(MetricPrefix.None) * r, MetricPrefix.None);
     }
     public static Current operator+ (Current l, Current r) {
         return new Current(l.ValueAs(MetricPrefix.None) + r.ValueAs(MetricPrefix.None), MetricPrefix.None);

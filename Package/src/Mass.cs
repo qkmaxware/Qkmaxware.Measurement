@@ -15,10 +15,10 @@ public class Mass : MetricMeasurement {
 
     #region operators
     public static Mass operator* (Scientific l, Mass r) {
-        return new Mass(l + r.ValueAs(MetricPrefix.None), MetricPrefix.None);
+        return new Mass(l * r.ValueAs(MetricPrefix.None), MetricPrefix.None);
     }
     public static Mass operator* (Mass l, Scientific r) {
-        return new Mass(l.ValueAs(MetricPrefix.None) + r, MetricPrefix.None);
+        return new Mass(l.ValueAs(MetricPrefix.None) * r, MetricPrefix.None);
     }
     public static Mass operator+ (Mass l, Mass r) {
         return new Mass(l.ValueAs(MetricPrefix.None) + r.ValueAs(MetricPrefix.None), MetricPrefix.None);

@@ -12,10 +12,10 @@ public class Resistance : MetricMeasurement {
 
     #region operators
     public static Resistance operator* (Scientific l, Resistance r) {
-        return new Resistance(l + r.ValueAs(MetricPrefix.None), MetricPrefix.None);
+        return new Resistance(l * r.ValueAs(MetricPrefix.None), MetricPrefix.None);
     }
     public static Resistance operator* (Resistance l, Scientific r) {
-        return new Resistance(l.ValueAs(MetricPrefix.None) + r, MetricPrefix.None);
+        return new Resistance(l.ValueAs(MetricPrefix.None) * r, MetricPrefix.None);
     }
     public static Resistance operator+ (Resistance l, Resistance r) {
         return new Resistance(l.ValueAs(MetricPrefix.None) + r.ValueAs(MetricPrefix.None), MetricPrefix.None);

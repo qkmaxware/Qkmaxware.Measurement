@@ -19,10 +19,10 @@ public class Duration : MetricMeasurement, ISquareRootable<Duration> {
         return new Duration(this.ValueAs(MetricPrefix.None).Sqrt(), MetricPrefix.None);
     }
     public static Duration operator* (Scientific l, Duration r) {
-        return new Duration(l + r.ValueAs(MetricPrefix.None), MetricPrefix.None);
+        return new Duration(l * r.ValueAs(MetricPrefix.None), MetricPrefix.None);
     }
     public static Duration operator* (Duration l, Scientific r) {
-        return new Duration(l.ValueAs(MetricPrefix.None) + r, MetricPrefix.None);
+        return new Duration(l.ValueAs(MetricPrefix.None) * r, MetricPrefix.None);
     }
     public static Duration operator+ (Duration l, Duration r) {
         return new Duration(l.ValueAs(MetricPrefix.None) + r.ValueAs(MetricPrefix.None), MetricPrefix.None);

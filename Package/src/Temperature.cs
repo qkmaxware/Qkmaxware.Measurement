@@ -20,10 +20,10 @@ public class Temperature : BaseMeasure {
 
     #region operators
     public static Temperature operator* (Scientific l, Temperature r) {
-        return new Temperature(l + r.InternalValue);
+        return new Temperature(l * r.InternalValue);
     }
     public static Temperature operator* (Temperature l, Scientific r) {
-        return new Temperature(l.InternalValue + r);
+        return new Temperature(l.InternalValue * r);
     }
     public static Temperature operator+ (Temperature l, Temperature r) {
         return new Temperature(l.InternalValue + r.InternalValue);

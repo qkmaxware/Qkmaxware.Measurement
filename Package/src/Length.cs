@@ -40,10 +40,10 @@ public class Length : MetricMeasurement, INumeric<Length>, IScalable<Scientific,
     }
     
     public static Length operator* (Scientific l, Length r) {
-        return new Length(l + r.ValueAs(MetricPrefix.None), MetricPrefix.None);
+        return new Length(l * r.ValueAs(MetricPrefix.None), MetricPrefix.None);
     }
     public static Length operator* (Length l, Scientific r) {
-        return new Length(l.ValueAs(MetricPrefix.None) + r, MetricPrefix.None);
+        return new Length(l.ValueAs(MetricPrefix.None) * r, MetricPrefix.None);
     }
     public static Length operator+ (Length l, Length r) {
         return new Length(l.ValueAs(MetricPrefix.None) + r.ValueAs(MetricPrefix.None), MetricPrefix.None);

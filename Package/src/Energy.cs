@@ -40,10 +40,10 @@ public class Energy : MetricMeasurement {
     }*/
     
     public static Energy operator* (Scientific l, Energy r) {
-        return new Energy(l + r.ValueAs(MetricPrefix.None), MetricPrefix.None);
+        return new Energy(l * r.ValueAs(MetricPrefix.None), MetricPrefix.None);
     }
     public static Energy operator* (Energy l, Scientific r) {
-        return new Energy(l.ValueAs(MetricPrefix.None) + r, MetricPrefix.None);
+        return new Energy(l.ValueAs(MetricPrefix.None) * r, MetricPrefix.None);
     }
     public static Energy operator+ (Energy l, Energy r) {
         return new Energy(l.ValueAs(MetricPrefix.None) + r.ValueAs(MetricPrefix.None), MetricPrefix.None);

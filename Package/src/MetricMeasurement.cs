@@ -1,4 +1,6 @@
+using System;
 using System.Numerics;
+using System.Linq;
 using Qkmaxware.Numbers;
 
 namespace Qkmaxware.Measurement {
@@ -40,6 +42,17 @@ public enum MetricPrefix {
 public abstract class MetricMeasurement : BaseMeasure {
     protected MetricMeasurement(Scientific value, MetricPrefix prefix) : base(value.x10((int)prefix)) {}
 
+    /// <summary>
+    /// Get the preferred metric scale based on the size of the measurement
+    /// </summary>
+    /// <returns>Closest scale to the measurement</returns>
+    public MetricPrefix PreferredScale => Enum.GetValues<MetricPrefix>().OrderBy(prefix => Math.Abs((int)prefix - this.InternalValue.Exponent)).First();
+
+    /// <summary>
+    /// Get the metric value scaled to the given prefix
+    /// </summary>
+    /// <param name="prefix">metric prefix</param>
+    /// <returns>scaled value</returns>
     public Scientific ValueAs(MetricPrefix prefix) {
         if (prefix == MetricPrefix.None) {
             return this.InternalValue;
