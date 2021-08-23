@@ -87,6 +87,10 @@ public class Speed : DerivedMeasure, INumeric<Speed>, IScalable<Scientific, Spee
     public Scientific TotalKilometresPerHour() {
         return this.Length.TotalKilometres() / this.Time.TotalHours();
     }
+
+    public override void Convert(out Scientific value) {
+        value = this.TotalMetresPerSecond();
+    }
     #endregion
 
     #region derived quantities

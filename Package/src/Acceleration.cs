@@ -22,6 +22,7 @@ public class Acceleration : DerivedMeasure, INumeric<Acceleration>, IScalable<Sc
     public override string ToString() {
         return $"{TotalMetresPerSecondSquared()}{UnitsOfMeasure?.PrimarySymbol ?? string.Empty})";
     }
+    
 
     #region operators 
     public Acceleration ScaleBy(Scientific value) => new Acceleration(this.Length.ScaleBy(value), this.Time1, this.Time2);
@@ -98,6 +99,10 @@ public class Acceleration : DerivedMeasure, INumeric<Acceleration>, IScalable<Sc
     }
     public Scientific TotalMetresPerSecondSquared() {
         return this.Length.TotalMetres() / (Time1.TotalSeconds() * Time2.TotalSeconds());
+    }
+
+    public override void Convert(out Scientific value) {
+        value = this.TotalMetresPerSecondSquared();
     }
     #endregion
 }

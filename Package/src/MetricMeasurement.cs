@@ -46,7 +46,12 @@ public abstract class MetricMeasurement : BaseMeasure {
     /// Get the preferred metric scale based on the size of the measurement
     /// </summary>
     /// <returns>Closest scale to the measurement</returns>
-    public MetricPrefix PreferredScale => Enum.GetValues<MetricPrefix>().OrderBy(prefix => Math.Abs((int)prefix - this.InternalValue.Exponent)).First();
+    public MetricPrefix PreferredScale {
+        get {
+            var prefixes = (MetricPrefix[])Enum.GetValues(typeof(MetricPrefix));
+            return prefixes.OrderBy(prefix => Math.Abs((int)prefix - this.InternalValue.Exponent)).First();
+        }
+    }
 
     /// <summary>
     /// Get the metric value scaled to the given prefix

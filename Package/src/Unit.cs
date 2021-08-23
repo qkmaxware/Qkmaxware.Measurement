@@ -13,13 +13,13 @@ public class Unit {
     /// Name of the unit of measure
     /// </summary>
     /// <value>long name</value>
-    public string Name {get; init;}
+    public string Name {get; private set;}
     /// <summary>
     /// Primary symbol used to denote a measurement relative to this unit of measure
     /// </summary>
     /// <value>mathematical symbol</value>
-    public string PrimarySymbol {get; init;}
-    private List<string> _secondarySymbols {get; init;}
+    public string PrimarySymbol {get; private set;}
+    private List<string> _secondarySymbols {get; set;}
     /// <summary>
     /// Secondary symbols used that can be used alternatively to the Primary Symbol
     /// </summary>
@@ -88,8 +88,7 @@ public class Unit {
     
     // override object.GetHashCode
     public override int GetHashCode() {
-        // TODO: write your implementation of GetHashCode() here
-        return HashCode.Combine(this.Name, this.PrimarySymbol);
+        return (this.Name, this.PrimarySymbol).GetHashCode();
     }
 }
 

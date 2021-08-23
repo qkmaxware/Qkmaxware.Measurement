@@ -5,7 +5,7 @@ namespace Qkmaxware.Measurement {
 /// <summary>
 /// Base class for measurements
 /// </summary>
-public abstract class BaseMeasure : IMeasure {
+public abstract class BaseMeasure : IMeasure, IConvertable<Scientific> {
     /// <summary>
     /// Internally stored value with units "InternalUnits"
     /// </summary>
@@ -23,6 +23,14 @@ public abstract class BaseMeasure : IMeasure {
     /// <param name="real">internal value in the internal units</param>
     protected BaseMeasure(Scientific real) {
         this.InternalValue = real;
+    }
+
+    /// <summary>
+    /// Convert this measure to a unitless value
+    /// </summary>
+    /// <param name="value">value</param>
+    public void Convert(out Scientific value) {
+        value = this.InternalValue;
     }
 
     public override string ToString() {
