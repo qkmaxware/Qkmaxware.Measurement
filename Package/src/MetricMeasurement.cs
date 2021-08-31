@@ -36,6 +36,86 @@ public enum MetricPrefix {
     Yocto = -24,
 }
 
+public static class MetricPrefixTools {
+    /// <summary>
+    /// Get the prefix symbol for this metrix prefix
+    /// </summary>
+    /// <param name="prefix">metric prefix</param>
+    /// <returns>prefix symbol</returns>
+    public static string GetPrefixSymbol(this MetricPrefix prefix) {
+        return prefix switch {
+
+            MetricPrefix.Yotta => "Y",
+            MetricPrefix.Zetta => "Z",
+            MetricPrefix.Exa => "E",
+            MetricPrefix.Peta => "P",
+            MetricPrefix.Tera => "T",
+            MetricPrefix.Giga => "G",
+            MetricPrefix.Mega => "M",
+            MetricPrefix.Kilo => "k",
+            MetricPrefix.Hecto => "h",
+            MetricPrefix.Deca => "da",
+
+            // --
+
+            MetricPrefix.Deci => "d",
+            MetricPrefix.Centi => "c",
+            MetricPrefix.Milli => "m",
+            MetricPrefix.Micro => "μ",
+            MetricPrefix.Nano => "n",
+            MetricPrefix.Pico => "p",
+            MetricPrefix.Femto => "f",
+            MetricPrefix.Atto => "a",
+            MetricPrefix.Zepto => "z",
+            MetricPrefix.Yocto => "y",
+
+            _ => string.Empty
+        };
+    }
+    /// <summary>
+    /// Attempt to determine the metric prefix for the given symbol
+    /// </summary>
+    /// <param name="symbol">symbol</param>
+    /// <returns>metric prefix</returns>
+    public static MetricPrefix ParsePrefix(string symbol) {
+        if (string.IsNullOrEmpty(symbol)) {
+            return MetricPrefix.None;
+        }
+        if (symbol.StartsWith("da")) {
+            return MetricPrefix.Deca;
+        } else {
+            char c = symbol[0];
+            return c switch {
+                'Y' => MetricPrefix.Yotta, 
+                'Z' => MetricPrefix.Zetta, 
+                'E' => MetricPrefix.Exa  , 
+                'P' => MetricPrefix.Peta , 
+                'T' => MetricPrefix.Tera , 
+                'G' => MetricPrefix.Giga , 
+                'M' => MetricPrefix.Mega , 
+                'k' => MetricPrefix.Kilo , 
+                'h' => MetricPrefix.Hecto, 
+                // Deca goes here, but deca has 2 characters so it is handled earlier
+
+                // --
+
+                'd' => MetricPrefix.Deci ,
+                'c' => MetricPrefix.Centi,
+                'm' => MetricPrefix.Milli,
+                'μ' => MetricPrefix.Micro,
+                'n' => MetricPrefix.Nano ,
+                'p' => MetricPrefix.Pico ,
+                'f' => MetricPrefix.Femto,
+                'a' => MetricPrefix.Atto ,
+                'z' => MetricPrefix.Zepto,
+                'y' => MetricPrefix.Yocto,
+
+                _ => MetricPrefix.None
+            };
+        }
+    }
+}
+
 /// <summary>
 /// Base class for measurements that use the metric system
 /// </summary>

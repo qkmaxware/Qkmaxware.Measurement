@@ -53,12 +53,27 @@ var r1 = m2.TotalGrams();
 ```
 
 ## Angle
-The Angle measurement defines angular measurements. Internally the quantity is stored in degrees and wrapped between 0 and 360. Similar to [Mass](#mass), you construct an angular measurement using static constructor methods and can obtain the results of the measure in other units by using the `Total*` methods. 
+The Angle measurement defines angular measurements. Internally the quantity is stored in degrees. Similar to [Mass](#mass), you construct an angular measurement using static constructor methods and can obtain the results of the measure in other units by using the `Total*` methods. 
 
 ```cs
 Angle angle = Angle.Degrees(45);
 var value = angle.TotalRadians();
 ```
+
+In many cases it makes sense to limit an angle to between 0 and 360 degrees (exclusive). The `Wrap` function will perform the correct wrapping to ensure the resulting angle is within this range. For cases where it only makes sense for a variable to be a wrapped angle I suggest using properties to automatically call the `Wrap` method as seen below.
+
+```cs
+class MyClass {
+  private Angle _angle;
+  public Angle AutoWrappedAngle {
+    get => _angle;
+    set => _angle = value.Wrap();
+  }
+  ...
+}
+```
+
+Additionally wrapping will be performed automatically on the stored value when using the utility trigonometric functions `Sin`, `Cos`, and `Tan`.This allows these functions to work well even for very large angular measures. 
 
 ## Length
 The Length measurement defines distance measurements. Internally the quantity is stored in metres. Similar to [Mass](#mass), you construct a length measurement using static constructor methods and can obtain the results of the measure in other units by using the `Total*` methods.

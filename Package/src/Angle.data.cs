@@ -4,7 +4,7 @@ using Qkmaxware.Numbers;
 namespace Qkmaxware.Measurement {
 
 /// <summary>
-/// An angular measurement, internally stored in decimal degrees from 0 to 360. Static method for common mathematical uses of angles.
+/// An angular measurement, internally stored in decimal degrees. Static method for common mathematical uses of angles.
 /// </summary>
 public partial class Angle : BaseMeasure, INumeric<Angle>, IScalable<Scientific, Angle> {
 
@@ -18,7 +18,7 @@ public partial class Angle : BaseMeasure, INumeric<Angle>, IScalable<Scientific,
 
     public static readonly Angle Zero = new Angle(Scientific.Zero);
 
-    private Angle(Scientific _internal) : base(( _internal - 360 * (_internal / 360d).Floor() )) {}
+    private Angle(Scientific _internal) : base(_internal) {}
     //private Angle(Arbitrary _internal) : base(( _internal - 360 * (_internal / 360d).Floor() )) {}
 
     #region operators

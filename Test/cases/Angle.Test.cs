@@ -20,27 +20,30 @@ public class AngleTest {
         a = Angle.Degrees(300);
         Assert.AreEqual(300, (double)a.TotalDegrees(), 0.00000000001);
 
-        a = Angle.Degrees(400);
+        a = Angle.Degrees(400).Wrap();
         Assert.AreEqual(40, (double)a.TotalDegrees(), 0.00000000001);
 
         // Negative angles
-        a = Angle.Degrees(-90);
+        a = Angle.Degrees(-90).Wrap();
         Assert.AreEqual(270, (double)a.TotalDegrees(), 0.00000000001);
 
-        a = Angle.Degrees(-300);
+        a = Angle.Degrees(-300).Wrap();
         Assert.AreEqual(60, (double)a.TotalDegrees(), 0.00000000001);
 
-        a = Angle.Degrees(-400);
+        a = Angle.Degrees(-400).Wrap();
         Assert.AreEqual(320, (double)a.TotalDegrees(), 0.00000000001);
+
+        a = Angle.Degrees(360);
+        Assert.AreEqual(360, (double)a.TotalDegrees(), 0.00000000001);
     }
 
     [TestMethod]
     public void TestLargeAngles() {
-        var angle = Angle.Degrees(192_725.469); // Wrapping in double precision (will introduce some error)
+        var angle = Angle.Degrees(192_725.469).Wrap(); // Wrapping in double precision (will introduce some error)
         Assert.AreEqual(125.469, (double)angle.TotalDegrees(), 0.1);
 
         var raw = 192_725_469.x10(-3);
-        angle = Angle.Degrees(raw); // Will perform wrapping in high precision before downcasting
+        angle = Angle.Degrees(raw).Wrap(); // Will perform wrapping in high precision before downcasting
 
         Assert.AreEqual(125.469, (double)angle.TotalDegrees(), 0.0001);
     }

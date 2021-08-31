@@ -5,6 +5,16 @@ namespace Qkmaxware.Measurement {
 
 public partial class Angle {
     /// <summary>
+    /// Limit this angle to be between 0 and 360 (exclusive)
+    /// </summary>
+    /// <returns>New angle wrapped to between [0, 360)</returns>
+    public Angle Wrap () {
+        var _internal = this.InternalValue;
+        _internal = ( _internal - 360 * (_internal / 360d).Floor() );
+        return new Angle(_internal);
+    }
+
+    /// <summary>
     /// Returns the angle whose cosine is the specified number
     /// </summary>
     /// <param name="cosine">A number representing a cosine</param>
@@ -47,7 +57,7 @@ public partial class Angle {
     /// <param name="angle">An angle</param>
     /// <returns>cosine</returns>
     public static double Cos(Angle angle) {
-        return Math.Cos((double)angle.TotalRadians());
+        return Math.Cos((double)angle.Wrap().TotalRadians());
     }
 
     /// <summary>
@@ -64,7 +74,7 @@ public partial class Angle {
     /// <param name="angle">An angle</param>
     /// <returns>sine</returns>
     public static double Sin(Angle angle) {
-        return Math.Sin((double)angle.TotalRadians());
+        return Math.Sin((double)angle.Wrap().TotalRadians());
     }
 
     /// <summary>
@@ -81,7 +91,7 @@ public partial class Angle {
     /// <param name="angle">An angle</param>
     /// <returns>tangent</returns>
     public static double Tan(Angle angle) {
-        return Math.Tan((double)angle.TotalRadians());
+        return Math.Tan((double)angle.Wrap().TotalRadians());
     }
 
     /// <summary>

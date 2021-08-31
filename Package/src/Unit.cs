@@ -27,6 +27,15 @@ public class Unit {
     public ReadOnlyCollection<string> SecondarySymbols => _secondarySymbols.AsReadOnly();
 
     /// <summary>
+    /// Get this unit's symbol when prefixed with the given metric measurement
+    /// </summary>
+    /// <param name="prefix"></param>
+    /// <returns></returns>
+    public string PrefixedSymbol(MetricPrefix prefix) {
+        return prefix.GetPrefixSymbol() + PrimarySymbol;
+    }
+
+    /// <summary>
     /// Create a new unit of measure
     /// </summary>
     /// <param name="name">name</param>
