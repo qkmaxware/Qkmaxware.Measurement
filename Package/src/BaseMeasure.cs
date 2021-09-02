@@ -36,6 +36,21 @@ public abstract class BaseMeasure : IMeasure, IConvertable<Scientific> {
     public override string ToString() {
         return $"{InternalValue}{UnitsOfMeasure?.PrimarySymbol ?? string.Empty}";
     }
+
+    public override bool Equals(object obj) {
+        if (obj == null)
+            return false;
+        if (obj.GetType() == GetType()) {
+            return this.InternalValue.Equals(((BaseMeasure)obj).InternalValue);
+        } else {
+            return false;
+        }
+    }
+    
+    // override object.GetHashCode
+    public override int GetHashCode() {
+        return this.InternalValue.GetHashCode();
+    }
 }
 
 }
