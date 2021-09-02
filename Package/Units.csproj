@@ -6,7 +6,7 @@
 
     <PackageId>Qkmaxware.Measurement</PackageId>
     <PackageName>Qkmaxware.Measurement</PackageName>
-    <Version>1.0.8</Version>
+    <Version>1.0.9</Version>
     <Authors>Colin Halseth</Authors>
     <PackageTags>units, measurements</PackageTags>
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Qkmaxware.Numbers" Version="1.0.11" />
+    <PackageReference Include="Qkmaxware.Numbers" Version="1.0.12" />
   </ItemGroup>
 
 </Project>
