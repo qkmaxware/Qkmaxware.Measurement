@@ -147,7 +147,7 @@ public partial class Angle : BaseMeasure, INumeric<Angle>, IScalable<Scientific,
     /// <param name="seconds">seconds</param>
     /// <returns>Angle</returns>
     public static Angle HoursMinutesSeconds(int hours, int minutes, double seconds) {
-        return Angle.Hours( hours + (minutes/60d) + (seconds/3600d) );
+        return Angle.Degrees( (hours*15d) + (minutes/60d) + (seconds/3600d) );
     }
     /// <summary>
     /// Get the angle in hours, minutes, and seconds
@@ -157,7 +157,9 @@ public partial class Angle : BaseMeasure, INumeric<Angle>, IScalable<Scientific,
         var decimalHours = (double)this.TotalHours();
         var wholeHours = (int)decimalHours;
 
-        var decimalMinutes = (decimalHours - wholeHours) * 60;
+        var remainingHours = (decimalHours - wholeHours);
+        var remainingHoursAsDegrees = remainingHours * 15;
+        var decimalMinutes = remainingHoursAsDegrees * 60;
         var wholeMinutes = (int)decimalMinutes;
         
         var decimalSeconds = (decimalMinutes - wholeMinutes) * 60;
